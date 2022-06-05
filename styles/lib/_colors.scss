@@ -1,0 +1,27 @@
+$color-light: #fafafa;
+$color-dark: #222222;
+$color-main: #168d3a;
+
+.color-light {
+	color: $color-light;
+}
+
+.bg-light {
+	background: $color-light;
+}
+
+.color-dark {
+	color: $color-dark;
+}
+
+.bg-dark {
+	background: $color-dark;
+}
+
+.color-main {
+	color: $color-main;
+}
+
+.bg-main {
+	background: $color-main;
+}

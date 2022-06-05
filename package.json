@@ -1,0 +1,30 @@
+{
+  "name": "kitchr-app",
+  "version": "1.0.0",
+  "description": "kitchr nextjs app",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:baptaste/kitchr-app.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.1.4",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "sass": "^1.51.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.23",
+    "@types/react": "17.0.43",
+    "@types/react-dom": "17.0.14",
+    "eslint": "8.12.0",
+    "eslint-config-next": "12.1.4",
+    "typescript": "4.6.3"
+  }
+}
