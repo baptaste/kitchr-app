@@ -49,6 +49,6 @@ export const brand = {
 	name: 'kitchr',
 	hero: {
 		title: "l'appli des recettes fonds de placard",
-		description: 'Trouves ta recette avec uniquement les ingrédients que as en stock ! Zéro graspi, 100% végé.',
+		description: 'Trouves ta recette avec uniquement les ingrédients que as en stock ! Zéro gaspi, 100% végé.',
 	},
 };

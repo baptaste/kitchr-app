@@ -1,6 +1,6 @@
-import '/styles/globals.scss';
-import '/styles/reset.css';
-import '/styles/lib/_main.scss';
+import '/src/styles/globals.scss';
+import '/src/styles/reset.css';
+import '/src/styles/lib/_main.scss';
 import type { AppProps } from 'next/app';
 import HeadElement from '../seo/HeadElement';
 import Nav from '../components/Nav';

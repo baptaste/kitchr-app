@@ -10,7 +10,7 @@ export default function Nav() {
 	return (
 		<div className={`${styles.container} flex-center justify-evenly`}>
 			{routes.map((route) => (
-				<NavLink key={route.id} {...route} />
+				<NavLink exact key={route.id} {...route} />
 			))}
 		</div>
 	);
