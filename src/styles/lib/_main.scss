@@ -4,41 +4,22 @@
 @import './colors.scss';
 @import './breakpoints.scss';
 @import './buttons.scss';
+@import './margin.scss';
 
 .app {
 	width: 100%;
-	height: 100vh;
-
-	.layout {
-		flex: 1;
-		flex-direction: column;
-		padding: 0.5rem;
-
-		// @media (max-width: $breakpoint-700) {
-		// 	& {
-		// 		flex-direction: column;
-		// 	}
-		// }
-
-		.test {
-			height: 100vh;
-			background: salmon;
-
-			&:nth-child(2) {
-				background: gold;
-			}
-
-			&:last-child {
-				background: brown;
-			}
-		}
-	}
+	min-height: 100vh !important;
 }
 
-// .button {
-// 	padding: 0.5rem 1rem;
-// 	background: black;
-// 	color: white;
-// 	border-radius: 7px;
-// 	cursor: pointer;
-// }
+.test {
+	height: 100vh;
+	background: salmon;
+
+	&:nth-child(2) {
+		background: gold;
+	}
+
+	&:last-child {
+		background: brown;
+	}
+}

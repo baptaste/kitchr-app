@@ -1,8 +1,8 @@
 import { brand } from '../../utils/constants.utils';
-import LinkDefault from '../lib/links/Default';
+import BaseLink from '../lib/links/Default';
 import styles from './index.module.scss';
 
-export default function Hero() {
+export default function Hero(): JSX.Element {
 	return (
 		<section className={`${styles.hero} flex-column justify-between`}>
 			<div className={`${styles.title}`}>
@@ -11,7 +11,7 @@ export default function Hero() {
 			</div>
 			<h2 className={`${styles.description} standardFont`}>{brand.hero.description}</h2>
 
-			<LinkDefault href='/login' text='Trouver ma recette' />
+			<BaseLink href='/login' text='Trouver ma recette' classes='bg-main color-light' />
 		</section>
 	);
 }

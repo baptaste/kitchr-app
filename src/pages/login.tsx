@@ -1,3 +1,5 @@
+import SignIn from '../components/SignIn';
+
 export default function Login() {
-	return <h1>LOGIN</h1>;
+	return <SignIn />;
 }

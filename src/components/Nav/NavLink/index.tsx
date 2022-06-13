@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './index.module.scss';
 
-export default function NavLink({ href, exact, regex, src, text }: any) {
+export default function NavLink({ href, exact, regex, src, text }: any): JSX.Element {
 	const { pathname } = useRouter(),
 		isActive = exact ? pathname === href : pathname.startsWith(href),
 		withImage = src ? src !== '' && src.includes('/static/icons/') : false;

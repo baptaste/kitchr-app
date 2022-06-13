@@ -1,0 +1,11 @@
+.layout {
+	flex: 1;
+	flex-direction: column;
+	padding: 1rem;
+
+	// @media (max-width: $breakpoint-700) {
+	// 	& {
+	// 		flex-direction: column;
+	// 	}
+	// }
+}

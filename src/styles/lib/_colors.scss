@@ -1,6 +1,7 @@
 $color-light: #fafafa;
 $color-dark: #222222;
 $color-main: #168d3a;
+$color-second: rgb(210, 230, 240);
 $filter-color-main: invert(31%) sepia(62%) saturate(4205%) hue-rotate(131deg) brightness(91%) contrast(83%);
 
 .color-light {
@@ -25,6 +26,14 @@ $filter-color-main: invert(31%) sepia(62%) saturate(4205%) hue-rotate(131deg) br
 
 .bg-main {
 	background: $color-main;
+}
+
+.color-second {
+	color: $color-second;
+}
+
+.bg-second {
+	background: $color-second;
 }
 
 .filter-color-main {

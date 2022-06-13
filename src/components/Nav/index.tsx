@@ -3,7 +3,7 @@ import { userRoutes, visitorRoutes } from '../../utils/nav.utils';
 import NavLink from './NavLink';
 import styles from './index.module.scss';
 
-export default function Nav() {
+export default function Nav(): JSX.Element {
 	const [signedIn, setSignedIn] = useState<boolean>(false);
 	const routes: any[] = signedIn ? userRoutes : visitorRoutes;
 
