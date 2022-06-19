@@ -1,7 +1,21 @@
-.signIn {
+@import 'src/styles/lib/main';
+
+.sign-in {
 	flex: 1;
-	// padding: 0.5em;
-	// height: 100vh;
-	// width: 100%;
-	// background: salmon;
+
+	&__inputs-wrapper {
+		width: 100%;
+		align-items: stretch;
+	}
+
+	&__redirect {
+		@media (max-width: $breakpoint-700) {
+			& {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 3rem;
+			}
+		}
+	}
 }

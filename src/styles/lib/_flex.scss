@@ -1,52 +1,52 @@
-.flex {
+.m-flex {
 	display: flex;
 }
 
-.flex-center {
+.m-flex-center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.flex-column {
+.m-flex-column {
 	display: flex;
 	flex-direction: column;
 	// justify-content: center;
 	align-items: center;
 }
 
-.justify-center {
+.m-justify-center {
 	justify-content: center;
 }
 
-.justify-evenly {
+.m-justify-evenly {
 	justify-content: space-evenly;
 }
 
-.justify-between {
+.m-justify-between {
 	justify-content: space-between;
 }
 
-.justify-start {
+.m-justify-start {
 	justify-content: flex-start;
 }
 
-.justify-end {
+.m-justify-end {
 	justify-content: flex-end;
 }
 
-.align-center {
+.m-align-center {
 	align-items: center;
 }
 
-.align-start {
+.m-align-start {
 	align-items: flex-start;
 }
 
-.align-end {
+.m-align-end {
 	align-items: flex-end;
 }
 
-.wrap {
+.m-flex-wrap {
 	flex-wrap: wrap;
 }

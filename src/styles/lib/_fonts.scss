@@ -66,17 +66,26 @@
 	font-display: swap;
 }
 
-.titleFont {
+.m-title-font {
 	font-family: 'PlayfairDisplay-ExtraBold';
 	font-size: 2.5rem;
 }
 
-.standardFont {
+.m-standard-font {
 	font-family: 'Poppins-Regular';
 	font-size: 1rem;
 }
 
-.tinyFont {
+.m-small-font {
+	font-family: 'Poppins-Light';
+	font-size: 0.8rem;
+}
+
+.m-tiny-font {
 	font-family: 'Poppins-Light';
 	font-size: 0.625rem;
+}
+
+.m-standard-font-bold {
+	font-family: 'Poppins-Bold';
 }

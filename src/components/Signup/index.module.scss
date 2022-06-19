@@ -1,0 +1,21 @@
+@import 'src/styles/lib/main';
+
+.sign-up {
+	flex: 1;
+
+	&__inputs-wrapper {
+		width: 100%;
+		align-items: stretch;
+	}
+
+	&__redirect {
+		@media (max-width: $breakpoint-700) {
+			& {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 3rem;
+			}
+		}
+	}
+}

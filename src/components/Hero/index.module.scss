@@ -4,11 +4,11 @@
 	padding: 1rem 0;
 	text-align: center;
 
-	.title {
+	&__title {
 		line-height: 1.2;
 	}
 
-	.description {
+	&__description {
 		width: 80%;
 		line-height: 2;
 	}
