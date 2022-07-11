@@ -7,7 +7,7 @@ interface IBaseInputProps {
 	inputType: string;
 	inputName: string;
 	labelText: string;
-	placeholder: string;
+	placeholder?: string;
 	inputValue: string;
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 	required?: boolean;
@@ -40,7 +40,7 @@ export default function BaseInput({ inputType, inputName, labelText, placeholder
 					className={`${styles['base-input-container__input']} m-flex m-color-light m-standard-font m-color-dark`}
 					value={inputValue}
 					onChange={onChange}
-					placeholder={placeholder}
+					placeholder={placeholder || ''}
 				/>
 				{inputName === 'password' && (
 					<div className={`${styles['base-input-container__icon']}`}>

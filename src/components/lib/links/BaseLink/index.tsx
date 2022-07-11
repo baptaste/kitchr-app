@@ -5,20 +5,26 @@ interface IBaseLinkProps {
 	href: string;
 	external?: boolean;
 	text: string;
-	classes: string;
+	classes?: string;
 }
 
 export default function BaseLink({ href, external, text, classes }: IBaseLinkProps): JSX.Element {
 	if (external)
 		return (
-			<a href={href} target='_blank' className={`${styles['base-link']} ${classes} m-standard-font m-text-center`}>
+			<a
+				href={href}
+				target='_blank'
+				className={`${styles['base-link']} ${classes} m-standard-font m-text-center`}
+			>
 				{text}
 			</a>
 		);
 
 	return (
 		<Link href={href} scroll>
-			<a className={`${styles['base-link']} ${classes} m-standard-font m-text-center`}>{text}</a>
+			<a className={`${styles['base-link']} ${classes} m-standard-font m-text-center`}>
+				{text}
+			</a>
 		</Link>
 	);
 }
