@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Signup from '../../components/Signup';
+import Signup from '../../components/OldSignup';
 
 const mapStateToProps = (state: any) => ({
 	email: state.auth.email,

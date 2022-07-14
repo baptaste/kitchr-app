@@ -1,19 +1,30 @@
 import type { NextPage } from 'next';
+import { AuthSession, AuthUser } from '@supabase/supabase-js';
 import Hero from '../components/Hero';
-import { useUser, withPageAuthRequired, getSession, GetSession, Session } from '@auth0/nextjs-auth0';
-import Link from 'next/link';
-import BaseLink from '../components/lib/links/BaseLink';
-// import { getSupabase } from '../utils/supabase';
-import { logAny } from '../utils/logs.utils';
 
 const Home: NextPage = () => {
+	// const { session, user } = useAuth();
+	// const [session, setSession] = useState<AuthSession | null>(null);
+	// const [user, setUser] = useState<AuthUser | null>(null);
+
+	// useEffect(() => {
+	// 	const authListener = onAuthStateChange({ setSession, setUser });
+	// 	return () => {
+	// 		authListener?.unsubscribe();
+	// 	};
+	// }, []);
+
+	// useEffect(() => {
+	// 	logAny('Auth user:', user);
+	// 	logAny('Auth session:', session);
+	// }, [user, session]);
 	// const { user } = useUser();
 	// logAny('auth0 user:', user);
 	// logAny('supabase recipes:', recipes);
 
 	return (
 		<>
-			<Hero />
+			{/* <Hero /> */}
 			<div className='test'>
 				{/* {user ? (
 					<p>

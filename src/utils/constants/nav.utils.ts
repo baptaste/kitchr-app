@@ -16,6 +16,14 @@ export const visitorRoutes = [
 		text: 'Favoris',
 	},
 	{
+		id: 'visitor-inventory',
+		name: 'inventory',
+		href: '/inventory',
+		pattern: null,
+		src: '/static/icons/shopping-list.png',
+		text: 'Inventaire',
+	},
+	{
 		id: 'visitor-login',
 		name: 'login',
 		href: '/auth/login',
@@ -53,7 +61,7 @@ export const userRoutes = [
 	{
 		id: 'user-profile',
 		name: 'profile',
-		href: '/profile',
+		href: '/user/profile',
 		pattern: null,
 		src: '/static/icons/user.png',
 		text: 'Profil',

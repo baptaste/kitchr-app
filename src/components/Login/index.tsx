@@ -6,10 +6,10 @@ import Divider from '../Divider';
 import BaseLink from '../lib/links/BaseLink';
 import { ChangeEvent, useEffect, useState } from 'react';
 import DOMPurify from 'dompurify';
-import { supabase } from '../../utils/supabase/supabase';
+import { supabase } from '../../utils/supabase/supabase.utils';
 import { Provider } from '@supabase/supabase-js';
 import { useRouter } from 'next/router';
-import { loginWithMagicLink, loginWithProvider } from '../../utils/supabase/login';
+import { signInWithMagicLink, signInWithProvider } from '../../utils/supabase/auth/signIn.utils';
 import LoginOptions from './LoginOptions';
 import { logAny } from '../../utils/logs.utils';
 import LoginEmail from './LoginEmail';
@@ -28,7 +28,7 @@ export default function Login() {
 	// 		// router.push('/auth/login?=email');
 	// 		setLoginOption({ type: 'email', opts: null });
 	// 	} else if (loginOption.type === 'provider') {
-	// 		// loginWithProvider(opts?.provider);
+	// 		// signInWithProvider(opts?.provider);
 	// 		setLoginOption({ type: 'provider', opts: loginOption.opts.provider });
 	// 	} else if (loginOption.type === 'link') {
 	// 		// router.push('/auth/login?=link');
@@ -46,25 +46,17 @@ export default function Login() {
 		<form className={`${styles.login}`}>
 			<PageHead title='Connexion' />
 
-			{!loginOption.type && <LoginOptions handleLoginOption={handleLoginOption} />}
+			{!loginOption.type && <LoginOptions isRegistering={false} handleLoginOption={handleLoginOption} />}
 
-			{loginOption.type === 'email' && <LoginEmail />}
-			{loginOption.type === 'magic-link' && <LoginMagicLink />}
+			{loginOption.type === 'email' && <LoginEmail isRegistering={false} />}
+			{loginOption.type === 'magic-link' && <LoginMagicLink isRegistering={false} />}
 
-			{/* {!loginOption.type ? (
-                <LoginOptions handleLoginOption={handleLoginOption} />
-            ) : loginOption.type === 'email' ? (
-                <LoginEmail />
-            ) : loginOption.type === 'magic-link' ? (
-                <LoginMagicLink />
-            ) : (
+			<Divider text='' />
 
-            )} */}
-
-			{/* <div className={`${styles['sign-up__redirect']}`}>
-				<p className={`m-standard-font`}>Vous avez déjà un compte ? </p>
-				<BaseLink href='/auth/login' text='Connectez-vous' classes='m-color-main m-standard-font-bold' />
-			</div> */}
+			<div className={`${styles['login__redirect']} m-flex`}>
+				<p className={`m-standard-font`}>Vous n'avez pas de compte ? </p>
+				<BaseLink href='/auth/register' text='Créér un compte' classes='m-color-main m-standard-font-bold' />
+			</div>
 		</form>
 	);
 }

@@ -1,16 +1,21 @@
 import React, { EventHandler, useState } from 'react';
-import { loginWithMagicLink } from '../../../utils/supabase/login';
+import { signInWithMagicLink } from '../../../utils/supabase/auth/signIn.utils';
+import { signUpWithMagicLink } from '../../../utils/supabase/auth/signUp.utils';
 import BaseButton from '../../lib/buttons/BaseButton';
 import BaseInput from '../../lib/inputs/BaseInput';
 
 interface ILoginMagicLinkState {
 	email: string;
-	message: string;
+	message: string | any;
 	emailSent: boolean;
 	error: boolean;
 }
 
-export default function LoginMagicLink() {
+interface ILoginEmailProps {
+	isRegistering?: boolean;
+}
+
+export default function LoginMagicLink({ isRegistering }: ILoginEmailProps) {
 	const [loginState, setLoginState] = useState<ILoginMagicLinkState>({
 		email: '',
 		message: '',
@@ -23,14 +28,21 @@ export default function LoginMagicLink() {
 	}
 
 	async function handleLogin() {
-		const error = await loginWithMagicLink(loginState.email);
-		if (error) {
-			return setLoginState({ ...loginState, error: true, message: error });
+		let supabaseError;
+		if (isRegistering) {
+			const { error }: any = await signUpWithMagicLink(loginState.email);
+			supabaseError = error;
+		} else {
+			const { error }: any = await signInWithMagicLink(loginState.email);
+			supabaseError = error;
+		}
+		if (supabaseError) {
+			return setLoginState({ ...loginState, error: true, message: supabaseError });
 		}
 		setLoginState({
 			...loginState,
 			emailSent: true,
-			message: 'Un lien de connexion a été envoyé à votre adresse mail.',
+			message: `Un lien ${isRegistering ? "d'inscription" : 'de connexion'} a été envoyé à votre adresse mail.`,
 		});
 	}
 

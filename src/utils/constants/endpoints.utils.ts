@@ -1,4 +1,4 @@
-export const KITCHR_CLIENT_ENTRYPOINT: string = 'http://localhost:3000/';
+export const KITCHR_CLIENT_ENTRYPOINT: string = 'http://localhost:3000';
 export const KITCHR_API_ENTRYPOINT: string = 'http://localhost:3000/api';
 
 export const EDAMAM_API = {

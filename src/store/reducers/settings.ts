@@ -1,20 +1,15 @@
-import { logAny } from '../../utils/logs.utils';
-import actions from '../constants/actions/settings.actions';
+import { createReducer } from '../utils/store.utils';
+import settingsActions from '../actions/settings.actions';
 
-export const initialState: any = {
+interface ISettingsState {
+	isLoading: boolean;
+}
+
+const initialState: ISettingsState = {
 	isLoading: false,
-	isDarkTheme: false,
 };
 
-function setState(state: any, action: any) {
-	return Object.assign({}, state, {
-		[action.key]: action.payload,
-	});
-}
+const handlers: any = { ...settingsActions };
+const settingsReducer = createReducer(initialState, handlers);
 
-export default function settingsReducer(state = initialState, action: any = {}) {
-	if (action.type === actions.HANDLE_IS_LOADING) {
-		return setState(state, action);
-	}
-	return state;
-}
+export default settingsReducer;

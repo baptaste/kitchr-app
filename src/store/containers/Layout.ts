@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Layout from '../../components/Layout';
-import actions from '../constants/actions/settings.actions';
+import actions from '../actions/settings.actions';
 
 const mapStateToProps = (state: any) => ({
 	isLoading: state.settings.isLoading,

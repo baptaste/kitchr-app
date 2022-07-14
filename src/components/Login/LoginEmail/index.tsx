@@ -1,17 +1,22 @@
-import React, { EventHandler, useState } from 'react';
-import { loginWithEmail } from '../../../utils/supabase/login';
-import { supabase } from '../../../utils/supabase/supabase';
+import React, { EventHandler, useEffect, useState } from 'react';
+import { logAny } from '../../../utils/logs.utils';
+import { signInWithEmailPassword } from '../../../utils/supabase/auth/signIn.utils';
+import { signUpWithEmailPassword } from '../../../utils/supabase/auth/signUp.utils';
 import BaseButton from '../../lib/buttons/BaseButton';
 import BaseInput from '../../lib/inputs/BaseInput';
 
 interface ILoginEmailState {
 	email: string;
 	password: string;
-	message: string;
+	message: string | any;
 	error: boolean;
 }
 
-export default function LoginEmail() {
+interface ILoginEmailProps {
+	isRegistering?: boolean;
+}
+
+export default function LoginEmail({ isRegistering }: ILoginEmailProps) {
 	const [loginState, setLoginState] = useState<ILoginEmailState>({
 		email: '',
 		password: '',
@@ -27,11 +32,23 @@ export default function LoginEmail() {
 	}
 
 	async function handleLogin() {
-		const error = await loginWithEmail(loginState.email, loginState.password);
-		if (error) {
-			return setLoginState({ ...loginState, error: true, message: error });
+		logAny('on passe bien dans handleLogin, registering ?', isRegistering);
+		let supabaseError;
+		if (isRegistering) {
+			const { error }: any = await signUpWithEmailPassword(loginState.email, loginState.password);
+			supabaseError = error;
+		} else {
+			const { error }: any = await signInWithEmailPassword(loginState.email, loginState.password);
+			supabaseError = error;
+		}
+		if (supabaseError) {
+			return setLoginState({ ...loginState, error: true, message: supabaseError });
 		}
 	}
+
+	useEffect(() => {
+		logAny('loginState:', loginState);
+	}, [loginState]);
 
 	return (
 		<>
@@ -55,7 +72,11 @@ export default function LoginEmail() {
 				onChange={handleChange}
 			/>
 
-			<BaseButton onClick={handleLogin} text='Se connecter' classes='m-bg-main m-color-light' />
+			<BaseButton
+				onClick={handleLogin}
+				text={isRegistering ? "S'inscrire" : 'Se connecter'}
+				classes='m-bg-main m-color-light'
+			/>
 		</>
 	);
 }

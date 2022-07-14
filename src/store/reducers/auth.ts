@@ -1,29 +1,20 @@
-import { logAny } from '../../utils/logs.utils';
-import { IAuthState } from '../interfaces/auth';
+import { createReducer } from '../utils/store.utils';
+import authActions from '../actions/auth.actions';
+import { AuthSession, AuthUser } from '@supabase/supabase-js';
 
-export const initialState: IAuthState = {
-	email: '',
-	password: '',
-	userName: '',
-	emailError: false,
-	passwordError: false,
-	emailErrorMessage: '',
-	passwordErrorMessage: '',
-	submitted: false,
+interface IAuthState {
+	session: AuthSession | null;
+	user: AuthUser | null;
+	loggedIn: boolean;
+}
+
+const initialState: IAuthState = {
+	session: null,
+	user: null,
+	loggedIn: false,
 };
 
-function setState(state: any, action: any) {
-	return Object.assign({}, state, {
-		[action.key]: action.payload,
-	});
-}
+const handlers: any = { ...authActions };
+const authReducer = createReducer(initialState, handlers);
 
-export default function authReducer(state = initialState, action: any = {}) {
-	if (action.type === 'SET_AUTH_INPUT_VALUE') {
-		return setState(state, action);
-	}
-	if (action.type === 'SET_AUTH_SUBMIT') {
-		return setState(state, action);
-	}
-	return state;
-}
+export default authReducer;
