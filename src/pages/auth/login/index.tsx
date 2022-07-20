@@ -12,7 +12,7 @@ import BaseLink from '../../../components/ui/links/BaseLink';
 import { fetchAPI } from '../../../lib/fetch';
 import { loginWithEmail, loginWithMagicLink, loginWithProvider } from '../../../services/supabase/auth/login';
 import { KITCHR_CLIENT_ENTRYPOINT } from '../../../utils/constants/endpoints.utils';
-import { logAny } from '../../../utils/logs.utils';
+import { logAny, logError } from '../../../utils/logs.utils';
 import { supabase } from '../../../utils/supabase/supabase.utils';
 import styles from './index.module.scss';
 
@@ -61,7 +61,9 @@ export default function Login() {
 			return setSubmitButtonText('Recevoir mon lien magique !');
 		}
 		if (authOption.type === 'provider' && authOption.provider !== '') {
-			// return handleSubmit();
+			loginWithProvider(authOption.provider as Provider)
+				.then((res) => logAny(`login with ${authOption.provider}, res:`, res))
+				.catch((error) => logError(error));
 		}
 		return () => {
 			setSubmitButtonText('Se connecter');
@@ -89,8 +91,8 @@ export default function Login() {
 				const welcomePage = `${KITCHR_CLIENT_ENTRYPOINT}/welcome?user_email=${formData.email}`;
 				router.push(welcomePage);
 			}
-		} else if (authOption.type === 'provider') {
-			// loginWithProvider(authOption.provider);
+		} else {
+			return;
 		}
 	}
 

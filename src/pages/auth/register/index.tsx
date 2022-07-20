@@ -1,3 +1,4 @@
+import { Provider } from '@supabase/supabase-js';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Divider from '../../../components/Divider';
@@ -11,7 +12,7 @@ import BaseLink from '../../../components/ui/links/BaseLink';
 import { fetchAPI } from '../../../lib/fetch';
 import { registerWithEmail, registerWithMagicLink, registerWithProvider } from '../../../services/supabase/auth/register';
 import { KITCHR_CLIENT_ENTRYPOINT } from '../../../utils/constants/endpoints.utils';
-import { logAny } from '../../../utils/logs.utils';
+import { logAny, logError } from '../../../utils/logs.utils';
 
 import styles from './index.module.scss';
 
@@ -60,7 +61,9 @@ export default function Register() {
 			return setSubmitButtonText('Recevoir mon lien magique !');
 		}
 		if (authOption.type === 'provider' && authOption.provider !== '') {
-			// return handleSubmit();
+			registerWithProvider(authOption.provider as Provider)
+				.then((res) => logAny(`login with ${authOption.provider}, res:`, res))
+				.catch((error) => logError(error));
 		}
 		return () => {
 			setSubmitButtonText("S'inscrire");
@@ -88,8 +91,8 @@ export default function Register() {
 				const welcomePage = `${KITCHR_CLIENT_ENTRYPOINT}/welcome?user_email=${formData.email}`;
 				router.push(welcomePage);
 			}
-		} else if (authOption.type === 'provider') {
-			// registerWithProvider(authOption.provider);
+		} else {
+			return;
 		}
 	}
 
