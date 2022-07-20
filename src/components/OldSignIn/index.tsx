@@ -2,13 +2,13 @@ import { ChangeEvent, useState } from 'react';
 import DOMPurify from 'dompurify';
 import { logAny } from '../../utils/logs.utils';
 import Divider from '../Divider';
-import BaseButton from '../lib/buttons/BaseButton';
-import BaseInput from '../lib/inputs/BaseInput';
+import BaseButton from '../ui/buttons/BaseButton';
+import BaseInput from '../ui/inputs/BaseInput';
 import PageHead from '../PageHead';
 import styles from './index.module.scss';
 import { IPatterns, patterns } from '../../utils/constants/patterns.utils';
 import { validateInput } from '../../utils/validate.utils';
-import BaseLink from '../lib/links/BaseLink';
+import BaseLink from '../ui/links/BaseLink';
 
 interface ISignInState {
 	email: string;

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { signInWithProvider } from '../../../utils/supabase/auth/signIn.utils';
 import Divider from '../../Divider';
-import BaseButton from '../../lib/buttons/BaseButton';
+import BaseButton from '../../ui/buttons/BaseButton';
 
 interface ILoginOptionsProps {
 	handleLoginOption: (method: string, opts?: any) => void;

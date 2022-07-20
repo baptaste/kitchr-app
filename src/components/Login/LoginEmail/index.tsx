@@ -2,8 +2,8 @@ import React, { EventHandler, useEffect, useState } from 'react';
 import { logAny } from '../../../utils/logs.utils';
 import { signInWithEmailPassword } from '../../../utils/supabase/auth/signIn.utils';
 import { signUpWithEmailPassword } from '../../../utils/supabase/auth/signUp.utils';
-import BaseButton from '../../lib/buttons/BaseButton';
-import BaseInput from '../../lib/inputs/BaseInput';
+import BaseButton from '../../ui/buttons/BaseButton';
+import BaseInput from '../../ui/inputs/BaseInput';
 
 interface ILoginEmailState {
 	email: string;

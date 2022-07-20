@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { logAny } from '../../../utils/logs.utils';
-import BaseIcon from '../../lib/icons/BaseIcon';
+import BaseIcon from '../../ui/icons/BaseIcon';
 import styles from './index.module.scss';
 
 interface ITabLinkProps {

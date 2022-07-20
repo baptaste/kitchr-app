@@ -1,9 +1,9 @@
 import styles from './index.module.scss';
 import PageHead from '../PageHead';
-import BaseInput from '../lib/inputs/BaseInput';
-import BaseButton from '../lib/buttons/BaseButton';
+import BaseInput from '../ui/inputs/BaseInput';
+import BaseButton from '../ui/buttons/BaseButton';
 import Divider from '../Divider';
-import BaseLink from '../lib/links/BaseLink';
+import BaseLink from '../ui/links/BaseLink';
 import { ChangeEvent, useEffect, useState } from 'react';
 import DOMPurify from 'dompurify';
 import { supabase } from '../../utils/supabase/supabase.utils';
@@ -22,21 +22,6 @@ export default function Login() {
 	function handleLoginOption(type: string, opts?: any) {
 		setLoginOption({ type, opts: opts || null });
 	}
-
-	// async function handleLoginOption(): Promise<any | void> {
-	// 	if (loginOption.type === 'email') {
-	// 		// router.push('/auth/login?=email');
-	// 		setLoginOption({ type: 'email', opts: null });
-	// 	} else if (loginOption.type === 'provider') {
-	// 		// signInWithProvider(opts?.provider);
-	// 		setLoginOption({ type: 'provider', opts: loginOption.opts.provider });
-	// 	} else if (loginOption.type === 'link') {
-	// 		// router.push('/auth/login?=link');
-	// 		setLoginOption('link');
-	// 	} else {
-	// 		return;
-	// 	}
-	// }
 
 	useEffect(() => {
 		logAny('loginOption:', loginOption);

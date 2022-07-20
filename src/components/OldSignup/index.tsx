@@ -2,13 +2,13 @@ import { ChangeEvent, useState, useReducer, Dispatch, FormEvent } from 'react';
 import DOMPurify from 'dompurify';
 import { logAny } from '../../utils/logs.utils';
 import Divider from '../Divider';
-import BaseButton from '../lib/buttons/BaseButton';
-import BaseInput from '../lib/inputs/BaseInput';
+import BaseButton from '../ui/buttons/BaseButton';
+import BaseInput from '../ui/inputs/BaseInput';
 import PageHead from '../PageHead';
 import styles from './index.module.scss';
 import { IPatterns, patterns } from '../../utils/constants/patterns.utils';
 import { validateInput } from '../../utils/validate.utils';
-import BaseLink from '../lib/links/BaseLink';
+import BaseLink from '../ui/links/BaseLink';
 import { IAuthState } from '../../store/interfaces/auth';
 
 interface ISignupProps extends IAuthState {
@@ -100,7 +100,7 @@ export default function Signup({
 					inputValue={email}
 					onChange={inputChangeHandler}
 				/>
-				{emailError && <p className='m-color-error m-standard-font m-small-font'>{emailErrorMessage}</p>}
+				{emailError && <p className='color-error m-standard-font m-small-font'>{emailErrorMessage}</p>}
 				<BaseInput
 					inputType='password'
 					inputName='password'
@@ -110,7 +110,7 @@ export default function Signup({
 					inputValue={password}
 					onChange={inputChangeHandler}
 				/>
-				{passwordError && <p className='m-color-error m-standard-font m-small-font'>{passwordErrorMessage}</p>}
+				{passwordError && <p className='color-error m-standard-font m-small-font'>{passwordErrorMessage}</p>}
 				<BaseInput
 					inputType='text'
 					inputName='userName'

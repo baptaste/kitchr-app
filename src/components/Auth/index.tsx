@@ -2,53 +2,46 @@ import { AuthSession, AuthUser } from '@supabase/supabase-js';
 import React, { useEffect, useState } from 'react';
 import { logAny } from '../../utils/logs.utils';
 import { onAuthStateChange } from '../../utils/supabase/auth/events.utils';
+import { supabase } from '../../utils/supabase/supabase.utils';
 import { IAuthProps } from './auth';
-
-// let authSession: AuthSession | null = null;
-// let authUser: AuthUser | null = null;
-// let loggedIn: boolean = false;
-
-// function setAuth(session: AuthSession | null, user: AuthUser | null, loggedIn: boolean) {
-// 	logAny('setAuth, loggedIn ?', loggedIn);
-// 	authSession = session;
-// 	authUser = user;
-// 	loggedIn = loggedIn;
-// }
-
-// function getAuth(): { session: AuthSession | null; user: AuthUser | null; loggedIn: boolean } {
-// 	logAny('getAuth, loggedIn ?', loggedIn);
-// 	if (authSession || authUser) {
-// 		return { session: authSession, user: authUser, loggedIn };
-// 	}
-// 	return { session: null, user: null, loggedIn };
-// }
 
 export default function Auth({ children, setStoreAuthSession, setStoreAuthUser, setStoreAuthLoggedIn }: IAuthProps): JSX.Element {
 	const [session, setSession] = useState<AuthSession | null>(null);
 	const [user, setUser] = useState<AuthUser | null>(null);
+	const [loggedIn, setLoggedIn] = useState<boolean>(false);
+
+	function AuthCleanUp() {
+		const authListener = onAuthStateChange({ setSession, setUser });
+		authListener?.unsubscribe();
+		setSession(null);
+		setUser(null);
+		setStoreAuthSession(null);
+		setStoreAuthUser(null);
+		setStoreAuthLoggedIn(false);
+	}
 
 	useEffect(() => {
-		const authListener = onAuthStateChange({ setSession, setUser });
+		// supabase.auth.onAuthStateChange((event, currentSession) => {
+		// 	logAny('onAuthStateChange event:', event);
+		// 	logAny('onAuthStateChange current currentSession:', currentSession);
+		// });
+		onAuthStateChange({ setSession, setUser });
+
 		return () => {
-			authListener?.unsubscribe();
+			AuthCleanUp();
 		};
 	}, []);
 
 	useEffect(() => {
-		logAny('Auth user:', user);
-		logAny('Auth session:', session);
-		if (session && user) {
-			setStoreAuthSession(session);
-			setStoreAuthUser(user);
-			setStoreAuthLoggedIn(true);
+		setStoreAuthSession(session);
+		setStoreAuthUser(user);
+		if (session) {
+			setLoggedIn(true);
+		} else {
+			setLoggedIn(false);
 		}
-	}, [user, session]);
+		setStoreAuthLoggedIn(loggedIn);
+	}, [session, loggedIn]);
 
 	return <>{children}</>;
 }
-
-// export function useAuth(): { session: AuthSession | null; user: AuthUser | null; loggedIn: boolean } {
-// 	const { session, user, loggedIn } = getAuth();
-// 	logAny('useAuth, loggedIn ?', loggedIn);
-// 	return { session, user, loggedIn };
-// }

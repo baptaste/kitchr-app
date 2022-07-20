@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { logError } from '../../utils/logs.utils';
 import { authSignOut } from '../../utils/supabase/auth/signOut.utils';
-import BaseButton from '../lib/buttons/BaseButton';
+import BaseButton from '../ui/buttons/BaseButton';
 
 export default function Signout() {
 	const router = useRouter();

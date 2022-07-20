@@ -3,14 +3,14 @@ import authActions from '../actions/auth.actions';
 import { AuthSession, AuthUser } from '@supabase/supabase-js';
 
 interface IAuthState {
-	session: AuthSession | null;
-	user: AuthUser | null;
+	auth_session: AuthSession | null;
+	auth_user: AuthUser | null;
 	loggedIn: boolean;
 }
 
 const initialState: IAuthState = {
-	session: null,
-	user: null,
+	auth_session: null,
+	auth_user: null,
 	loggedIn: false,
 };
 

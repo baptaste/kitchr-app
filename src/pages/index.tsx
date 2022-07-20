@@ -1,30 +1,22 @@
 import type { NextPage } from 'next';
 import { AuthSession, AuthUser } from '@supabase/supabase-js';
 import Hero from '../components/Hero';
+import { useEffect } from 'react';
+import { supabase } from '../utils/supabase/supabase.utils';
+import { logAny } from '../utils/logs.utils';
+import { connect } from 'react-redux';
+import { mapStateToProps, mapDispatchToProps } from '../store/containers/Home';
 
-const Home: NextPage = () => {
-	// const { session, user } = useAuth();
-	// const [session, setSession] = useState<AuthSession | null>(null);
-	// const [user, setUser] = useState<AuthUser | null>(null);
-
-	// useEffect(() => {
-	// 	const authListener = onAuthStateChange({ setSession, setUser });
-	// 	return () => {
-	// 		authListener?.unsubscribe();
-	// 	};
-	// }, []);
-
-	// useEffect(() => {
-	// 	logAny('Auth user:', user);
-	// 	logAny('Auth session:', session);
-	// }, [user, session]);
-	// const { user } = useUser();
-	// logAny('auth0 user:', user);
-	// logAny('supabase recipes:', recipes);
+const Home: NextPage = ({ isLoading }: any) => {
+	useEffect(() => {
+		const user = supabase.auth.user();
+		logAny('Home page, user:', user);
+		logAny('Home page, isLoading:', isLoading);
+	}, []);
 
 	return (
 		<>
-			{/* <Hero /> */}
+			<Hero />
 			<div className='test'>
 				{/* {user ? (
 					<p>
@@ -103,4 +95,4 @@ const Home: NextPage = () => {
 	we no longer need to handle loading, error states, or whether or not the user is logged in.
 */
 
-export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

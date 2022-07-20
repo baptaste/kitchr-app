@@ -1,5 +1,6 @@
 import { createReducer } from '../utils/store.utils';
 import settingsActions from '../actions/settings.actions';
+import { logAny } from '../../utils/logs.utils';
 
 interface ISettingsState {
 	isLoading: boolean;

@@ -1,9 +1,9 @@
 import styles from './index.module.scss';
 import PageHead from '../PageHead';
-import BaseInput from '../lib/inputs/BaseInput';
-import BaseButton from '../lib/buttons/BaseButton';
+import BaseInput from '../ui/inputs/BaseInput';
+import BaseButton from '../ui/buttons/BaseButton';
 import Divider from '../Divider';
-import BaseLink from '../lib/links/BaseLink';
+import BaseLink from '../ui/links/BaseLink';
 import { ChangeEvent, useEffect, useState } from 'react';
 import DOMPurify from 'dompurify';
 import { supabase } from '../../utils/supabase/supabase.utils';

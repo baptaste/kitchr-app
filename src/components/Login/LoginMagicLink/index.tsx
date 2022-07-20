@@ -1,8 +1,8 @@
 import React, { EventHandler, useState } from 'react';
 import { signInWithMagicLink } from '../../../utils/supabase/auth/signIn.utils';
 import { signUpWithMagicLink } from '../../../utils/supabase/auth/signUp.utils';
-import BaseButton from '../../lib/buttons/BaseButton';
-import BaseInput from '../../lib/inputs/BaseInput';
+import BaseButton from '../../ui/buttons/BaseButton';
+import BaseInput from '../../ui/inputs/BaseInput';
 
 interface ILoginMagicLinkState {
 	email: string;
@@ -48,7 +48,7 @@ export default function LoginMagicLink({ isRegistering }: ILoginEmailProps) {
 
 	return (
 		<>
-			{loginState.error && <p className='m-color-error m-standard-font m-standard-font'>{loginState.message}</p>}
+			{loginState.error && <p className='color-error m-standard-font m-standard-font'>{loginState.message}</p>}
 			{loginState.emailSent && <p className='m-color-main m-standard-font m-standard-font'>{loginState.message}</p>}
 
 			<BaseInput
