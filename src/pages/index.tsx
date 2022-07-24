@@ -1,21 +1,16 @@
 import type { NextPage } from 'next';
-import { AuthSession, AuthUser } from '@supabase/supabase-js';
 import Hero from '../components/Hero';
-import { useEffect } from 'react';
-import { supabase } from '../utils/supabase/supabase.utils';
 import { logAny } from '../utils/logs.utils';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from '../store/containers/Home';
+import { renderIf } from '../utils/jsx.utils';
 
 const Home: NextPage = ({ isLoading }: any) => {
-	useEffect(() => {
-		const user = supabase.auth.user();
-		logAny('Home page, user:', user);
-		logAny('Home page, isLoading:', isLoading);
-	}, []);
-
 	return (
 		<>
+			{/* {renderIf(!isLoading, () => (
+				<p>not loading</p>
+			))} */}
 			<Hero />
 			<div className='test'>
 				{/* {user ? (

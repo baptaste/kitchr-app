@@ -10,7 +10,7 @@ import PageHead from '../../../components/PageHead';
 import BaseButton from '../../../components/ui/buttons/BaseButton';
 import BaseLink from '../../../components/ui/links/BaseLink';
 import { fetchAPI } from '../../../lib/fetch';
-import { registerWithEmail, registerWithMagicLink, registerWithProvider } from '../../../services/supabase/auth/register';
+import { registerWithEmail, registerWithMagicLink, registerWithProvider } from '../../../services/supabase/auth/register.service';
 import { KITCHR_CLIENT_ENTRYPOINT } from '../../../utils/constants/endpoints.utils';
 import { logAny, logError } from '../../../utils/logs.utils';
 

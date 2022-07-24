@@ -1,6 +1,6 @@
 import { AuthSession, AuthUser } from '@supabase/supabase-js';
 import { connect } from 'react-redux';
-import Auth from '../../components/Auth';
+import Auth from '../../auth';
 import actions from '../actions/auth.actions';
 
 const mapStateToProps = (state: any) => ({

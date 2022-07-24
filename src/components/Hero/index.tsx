@@ -1,5 +1,7 @@
+import { getEdmamRecipes } from '../../services/edamam/get-recipes.service';
 import { brand } from '../../utils/constants/document.utils';
 import { logAny } from '../../utils/logs.utils';
+import BaseButton from '../ui/buttons/BaseButton';
 // import { useAuth } from '../Auth';
 import BaseLink from '../ui/links/BaseLink';
 import styles from './index.module.scss';
@@ -35,7 +37,13 @@ export default function Hero(): JSX.Element {
 				<h1 className='title-font'>{brand.hero.title}</h1>
 			</div>
 			<h2 className={`${styles['hero__description']} m-standard-font`}>{brand.hero.description}</h2>
-			<BaseLink href='/inventory' text='Trouver ma recette' classes='m-bg-main m-color-light' />
+			{/* <BaseLink href='/inventory' text='Trouver ma recette' classes='m-bg-main m-color-light' /> */}
+			<BaseButton
+				type='button'
+				text='Trouver ma recette TEST'
+				onClick={getEdmamRecipes}
+				classes='m-bg-main m-color-light'
+			/>
 		</section>
 	);
 }

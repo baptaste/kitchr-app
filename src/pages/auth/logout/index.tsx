@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import BaseButton from '../../../components/ui/buttons/BaseButton';
 import { fetchAPI } from '../../../lib/fetch';
-import { logoutUser } from '../../../services/supabase/auth/logout';
+import { logoutUser } from '../../../services/supabase/auth/logout.service';
 import { logAny } from '../../../utils/logs.utils';
 import { supabase } from '../../../utils/supabase/supabase.utils';
 
