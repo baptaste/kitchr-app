@@ -8,7 +8,7 @@ export default function BaseLink(props: IBaseLinkProps): JSX.Element {
 	const { pathname } = useRouter();
 	const active: boolean = useMemo(() => props.href === pathname, [pathname]);
 	let className: string = `${styles['base-link']}
-	${props.localeClass && styles[props.localeClass]} text-centered radius-075rem ${props.classes ?? ''} `;
+	${props.localeClass && styles[props.localeClass]} text-center radius-075rem ${props.classes ?? ''} `;
 	let style: any = {};
 
 	if (active) {

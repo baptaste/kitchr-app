@@ -89,8 +89,8 @@ export default function Signup({
 	return (
 		<form className={`${styles['sign-up']}`}>
 			<PageHead title='Inscription' />
-			<p className='m-standard-font m-margin-bottom-1'>Entrez votre email et mot de passe pour vous inscrire!</p>
-			<div className={`${styles['sign-up__inputs-wrapper']} m-flex-column m-margin-ver-1 `}>
+			<p className='m-standard-font margin-bottom-1'>Entrez votre email et mot de passe pour vous inscrire!</p>
+			<div className={`${styles['sign-up__inputs-wrapper']} flex-column margin-ver-1 `}>
 				<BaseInput
 					inputType='email'
 					inputName='email'
@@ -100,7 +100,7 @@ export default function Signup({
 					inputValue={email}
 					onChange={inputChangeHandler}
 				/>
-				{emailError && <p className='color-error m-standard-font m-small-font'>{emailErrorMessage}</p>}
+				{emailError && <p className='color-five m-standard-font m-small-font'>{emailErrorMessage}</p>}
 				<BaseInput
 					inputType='password'
 					inputName='password'
@@ -110,7 +110,7 @@ export default function Signup({
 					inputValue={password}
 					onChange={inputChangeHandler}
 				/>
-				{passwordError && <p className='color-error m-standard-font m-small-font'>{passwordErrorMessage}</p>}
+				{passwordError && <p className='color-five m-standard-font m-small-font'>{passwordErrorMessage}</p>}
 				<BaseInput
 					inputType='text'
 					inputName='userName'
@@ -120,13 +120,13 @@ export default function Signup({
 					onChange={inputChangeHandler}
 				/>
 			</div>
-			<BaseButton onClick={buttonClickHandler} text="S'inscrire" classes='m-bg-main m-color-light' />
+			<BaseButton onClick={buttonClickHandler} text="S'inscrire" classes='bg-one color-three' />
 			<Divider text='ou' />
-			<BaseButton onClick={buttonClickHandler} text="S'inscrire avec Google" classes='m-bg-dark m-color-light' />
+			<BaseButton onClick={buttonClickHandler} text="S'inscrire avec Google" classes='bg-two color-three' />
 			<Divider text='' />
 			<div className={`${styles['sign-up__redirect']}`}>
 				<p className={`m-standard-font`}>Vous avez déjà un compte ? </p>
-				<BaseLink href='/auth/login' text='Connectez-vous' classes='m-color-main m-standard-font-bold' />
+				<BaseLink href='/auth/login' text='Connectez-vous' classes='color-one m-standard-font-bold' />
 			</div>
 		</form>
 	);

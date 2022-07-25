@@ -9,7 +9,7 @@ export default function Layout({ children }: PropsWithChildren<ILayout>): JSX.El
 	return (
 		<div className='app'>
 			<Auth>
-				<main className={`${styles['layout']} m-flex`}>{children}</main>
+				<main className={`${styles['layout']} flex`}>{children}</main>
 				<TabBar />
 			</Auth>
 		</div>

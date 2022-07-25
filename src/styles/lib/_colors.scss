@@ -1,46 +1,59 @@
-$color-light: #fafafa;
-$color-dark: #222222;
-$color-main: #168d3a;
-$color-second: rgb(210, 230, 240);
-$color-error: crimson;
-$filter-color-main: invert(31%) sepia(62%) saturate(4205%) hue-rotate(131deg) brightness(91%) contrast(83%);
+// COLOR VARIABLES
+$color-green: #168d3a; // one
+$color-dark-jungle-green: #1a2421; // two
+$color-alabaster: #fafafa; // three
+$color-gray-light-blue: #d2e6f0; // four
+$color-crimson: crimson; // five
 
-.m-color-light {
-	color: $color-light;
+// FILTER COLOR VARIABLES
+$filter-color-one: invert(31%) sepia(62%) saturate(4205%) hue-rotate(131deg) brightness(91%) contrast(83%);
+
+// CLASSES
+/*** green ***/
+.color-one {
+	color: $color-green;
 }
 
-.m-bg-light {
-	background: $color-light;
+.bg-one {
+	background: $color-green;
 }
 
-.m-color-dark {
-	color: $color-dark;
+.filter-color-one {
+	filter: $filter-color-one;
 }
 
-.m-bg-dark {
-	background: $color-dark;
+/*** dark-jungle-green ***/
+.color-two {
+	color: $color-dark-jungle-green;
 }
 
-.m-color-main {
-	color: $color-main;
+.bg-two {
+	background: $color-dark-jungle-green;
 }
 
-.m-bg-main {
-	background: $color-main;
+/*** alabaster ***/
+.color-three {
+	color: $color-alabaster;
 }
 
-.m-color-second {
-	color: $color-second;
+.bg-three {
+	background: $color-alabaster;
 }
 
-.m-bg-second {
-	background: $color-second;
+/*** gray-light-blue ***/
+.color-four {
+	color: $color-gray-light-blue;
 }
 
-.color-error {
-	color: $color-error;
+.bg-four {
+	background: $color-gray-light-blue;
 }
 
-.m-filter-color-main {
-	filter: invert(31%) sepia(62%) saturate(4205%) hue-rotate(131deg) brightness(91%) contrast(83%);
+/*** crimson ***/
+.color-five {
+	color: $color-crimson;
+}
+
+.bg-five {
+	background: $color-crimson;
 }

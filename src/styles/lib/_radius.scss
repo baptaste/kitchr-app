@@ -1,0 +1,18 @@
+// VARIABLES
+$round: 50%;
+$radius-1rem: 1rem;
+$radius-075rem: 0.75rem;
+
+// CLASSES
+/*** round ***/
+.round {
+	border-radius: $round;
+}
+
+.radius-1rem {
+	border-radius: $radius-1rem;
+}
+
+.radius-075rem {
+	border-radius: $radius-075rem;
+}

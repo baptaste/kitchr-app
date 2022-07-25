@@ -9,18 +9,18 @@ export default function Input(props: IInputProps): JSX.Element {
 	}
 
 	return (
-		<div className={`${styles['base-input']} m-flex-column m-align-start m-justify-between m-margin-ver-1`}>
+		<div className={`${styles['base-input']} flex-column align-start justify-between margin-ver-1`}>
 			{props.labelText && (
-				<label htmlFor={props.name} className='m-standard-font m-margin-bottom-1'>
+				<label htmlFor={props.name} className='m-standard-font margin-bottom-1'>
 					{props.labelText}
 				</label>
 			)}
-			<div className={`${styles['base-input-container']} m-flex m-align-center m-justify-between`}>
+			<div className={`${styles['base-input-container']} flex align-center justify-between`}>
 				<input
 					type={props.type}
 					name={props.name}
 					required={props.required}
-					className={`${styles['base-input-container__input']} m-flex m-color-light m-standard-font m-color-dark`}
+					className={`${styles['base-input-container__input']} flex color-three m-standard-font color-two`}
 					value={props.value}
 					defaultValue={props.defaultValue}
 					onChange={handleChange}

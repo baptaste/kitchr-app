@@ -1,5 +1,9 @@
 .base-button {
 	width: 100%;
-	padding: 0.7rem 0;
+	padding: 0.7rem 1rem;
 	border-radius: 12px;
+
+	& p {
+		min-width: 75%;
+	}
 }

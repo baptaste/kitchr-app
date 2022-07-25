@@ -8,14 +8,14 @@ interface IAuthOptionsProps {
 
 export default function AuthOptions({ onClick, isRegistering }: IAuthOptionsProps): JSX.Element {
 	const authProviders = [
-		{ id: 1, name: 'Google', icon: '', classes: 'm-bg-dark m-color-light' },
-		{ id: 2, name: 'Facebook', icon: '', classes: 'm-bg-dark m-color-light' },
-		{ id: 3, name: 'Apple', icon: '', classes: 'm-bg-dark m-color-light' },
+		{ id: 1, name: 'Google', iconSrc: '/static/icons/logo-google.png' },
+		{ id: 2, name: 'Facebook', iconSrc: '/static/icons/logo-facebook.png' },
+		{ id: 3, name: 'Apple', iconSrc: '/static/icons/logo-apple.png' },
 	];
 
 	return (
 		<>
-			<p className='m-standard-font m-margin-bottom-1'>
+			<p className='m-standard-font margin-bottom-1'>
 				Choisissez une des méthodes ci-dessous pour vous {isRegistering ? 'inscrire!' : 'connecter!'}
 			</p>
 
@@ -23,7 +23,7 @@ export default function AuthOptions({ onClick, isRegistering }: IAuthOptionsProp
 				type='button'
 				onClick={() => onClick('email')}
 				text={`${isRegistering ? "S'inscrire" : 'Se connecter'} avec un email`}
-				classes='m-bg-main m-color-light'
+				classes='bg-one color-three'
 			/>
 
 			<Divider text='ou' />
@@ -31,10 +31,13 @@ export default function AuthOptions({ onClick, isRegistering }: IAuthOptionsProp
 			{authProviders.map((provider: any) => (
 				<BaseButton
 					type='button'
+					name={provider.name}
 					key={provider.id}
 					onClick={() => onClick('provider', provider.name)}
 					text={`${isRegistering ? "S'inscrire" : 'Se connecter'} avec ${provider.name}`}
-					classes={provider.classes}
+					textClass='text-start '
+					classes='flex justify-evenly bg-three color-two margin-ver-05 border-1px border-color-two'
+					iconSrc={provider.iconSrc}
 				/>
 			))}
 
@@ -44,7 +47,7 @@ export default function AuthOptions({ onClick, isRegistering }: IAuthOptionsProp
 				type='button'
 				onClick={() => onClick('magic-link')}
 				text='Recevoir un lien magique'
-				classes='m-bg-main m-color-light'
+				classes='bg-one color-three'
 			/>
 		</>
 	);

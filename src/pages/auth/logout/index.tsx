@@ -24,9 +24,9 @@ export default function Logout() {
 				type='button'
 				onClick={handleLogoutClick}
 				text='Déconnexion'
-				classes='m-bg-dark m-color-main m-standard-font-bold  m-margin-ver-1'
+				classes='bg-two color-one m-standard-font-bold  margin-ver-1'
 			/>
-			{error && <p className='m-margin-ver-1 color-error text-bold'>{error}</p>}
+			{error && <p className='margin-ver-1 color-five text-bold'>{error}</p>}
 		</>
 	);
 }

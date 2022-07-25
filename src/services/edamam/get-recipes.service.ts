@@ -30,8 +30,9 @@ export async function getEdmamRecipes(): Promise<IEdamamAPIResponse | any> {
 		if (response.status !== 200) {
 			throw `Error while fetching data from edamam recipe api. Data: ${data}`;
 		}
-		logAny('edamam recipes:', data);
-		return data;
+		const recipes = data?.hits.map((key: any) => key.recipe);
+		logAny('edamam recipes:', recipes);
+		return recipes;
 	} catch (error) {
 		logError(error);
 		throw error;

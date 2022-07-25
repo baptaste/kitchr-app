@@ -1,11 +1,15 @@
 import Image from 'next/image';
+import type { IBaseIconProps } from './BaseIcon.d';
 
-interface IBaseIconProps {
-	src: string;
-	alt: string;
-	onClick?: () => any;
-}
-
-export default function BaseIcon({ src, alt, onClick }: IBaseIconProps): JSX.Element {
-	return <Image src={src} onClick={onClick} alt={alt + ' icône'} width={24} height={24} objectFit='cover' />;
+export default function BaseIcon(props: IBaseIconProps): JSX.Element {
+	return (
+		<Image
+			src={props.src}
+			onClick={props.onClick}
+			alt={props.alt + ' icône'}
+			width={props.width || 24}
+			height={props.height || 24}
+			objectFit='cover'
+		/>
+	);
 }

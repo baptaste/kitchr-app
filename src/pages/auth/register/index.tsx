@@ -141,15 +141,15 @@ export default function Register() {
 					/>
 				)}
 
-				{authOption.type !== '' && <BaseButton type='submit' text={submitButtonText} classes='m-bg-main m-color-light' />}
+				{authOption.type !== '' && <BaseButton type='submit' text={submitButtonText} classes='bg-one color-three' />}
 
-				{error && <p className='m-margin-ver-1 color-error text-bold'>{error}</p>}
+				{error && <p className='margin-ver-1 color-five text-bold'>{error}</p>}
 
 				<Divider text='' />
 
-				<div className={`${styles['register__redirect']} m-flex-column`}>
+				<div className={`${styles['register__redirect']} flex-column`}>
 					<p className={`m-standard-font`}>Vous avez déjà un compte ?</p>
-					<BaseLink href='/auth/login' text='Se connecter' classes='m-color-main m-standard-font-bold' />
+					<BaseLink href='/auth/login' text='Se connecter' classes='color-one m-standard-font-bold' />
 				</div>
 			</Form>
 		</div>

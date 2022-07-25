@@ -1,10 +1,12 @@
-@import './flex.scss';
-@import './fonts.scss';
-@import './text.scss';
-@import './colors.scss';
-@import './breakpoints.scss';
-@import './buttons.scss';
-@import './margin.scss';
+@import 'flex';
+@import 'fonts';
+@import 'text';
+@import 'colors';
+@import 'breakpoints';
+@import 'buttons';
+@import 'margin';
+@import 'borders';
+@import 'radius';
 
 .app {
 	width: 100%;

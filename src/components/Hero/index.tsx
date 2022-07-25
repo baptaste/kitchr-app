@@ -12,7 +12,7 @@ export default function Hero(): JSX.Element {
 	// logAny('Hero, loggedIn ?', loggedIn);
 	//TODO connect Hero to redux
 	return (
-		<section className={`${styles['hero']} m-flex-column m-justify-between`}>
+		<section className={`${styles['hero']} flex-column justify-between`}>
 			{/* {loggedIn ? (
 				<div className={`${styles['hero__title']}`}>
 					<h1 className='title-font'>Bonjour {user?.email},</h1>
@@ -30,20 +30,15 @@ export default function Hero(): JSX.Element {
 			<BaseLink
 				href={loggedIn ? '/inventory' : '/auth/login'}
 				text='Trouver ma recette'
-				classes='m-bg-main m-color-light'
+				classes='bg-one color-three'
 			/> */}
 			<div className={`${styles['hero__title']}`}>
 				<h1 className='title-font'>{brand.name},</h1>
 				<h1 className='title-font'>{brand.hero.title}</h1>
 			</div>
 			<h2 className={`${styles['hero__description']} m-standard-font`}>{brand.hero.description}</h2>
-			{/* <BaseLink href='/inventory' text='Trouver ma recette' classes='m-bg-main m-color-light' /> */}
-			<BaseButton
-				type='button'
-				text='Trouver ma recette TEST'
-				onClick={getEdmamRecipes}
-				classes='m-bg-main m-color-light'
-			/>
+			{/* <BaseLink href='/inventory' text='Trouver ma recette' classes='bg-one color-three' /> */}
+			<BaseButton type='button' text='Trouver ma recette TEST' onClick={getEdmamRecipes} classes='bg-one color-three' />
 		</section>
 	);
 }

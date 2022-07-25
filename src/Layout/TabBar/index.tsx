@@ -14,8 +14,8 @@ export default function TabBar({ loggedIn }: ITabBarProps): JSX.Element {
 	}, [loggedIn]);
 
 	return (
-		<nav role='none' className={`${styles['nav']} m-bg-light`}>
-			<ul id='primary-nav' role='tablist' className={`${styles['primary-nav']} m-flex-center`}>
+		<nav role='none' className={`${styles['nav']} bg-three`}>
+			<ul id='primary-nav' role='tablist' className={`${styles['primary-nav']} flex-center`}>
 				{routes.map((route) => (
 					<li key={route.id} className={`${styles['nav-item']}`}>
 						<TabLink exact {...route} />

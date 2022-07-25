@@ -51,8 +51,8 @@ export default function SignIn(): JSX.Element {
 	return (
 		<div className={`${styles['sign-in']}`}>
 			<PageHead title='Connexion' />
-			<p className='m-standard-font m-margin-bottom-1'>Entrez votre email et mot de passe pour vous connecter!</p>
-			<div className={`${styles['sign-in__inputs-wrapper']} m-flex-column m-margin-ver-1 `}>
+			<p className='m-standard-font margin-bottom-1'>Entrez votre email et mot de passe pour vous connecter!</p>
+			<div className={`${styles['sign-in__inputs-wrapper']} flex-column margin-ver-1 `}>
 				<BaseInput
 					inputName='email'
 					labelText='Email*'
@@ -70,13 +70,13 @@ export default function SignIn(): JSX.Element {
 					onChange={(e) => inputChangeHandler(e, 'password')}
 				/>
 			</div>
-			<BaseButton onClick={buttonClickHandler} text='Se connecter' classes='m-bg-main m-color-light' />
+			<BaseButton onClick={buttonClickHandler} text='Se connecter' classes='bg-one color-three' />
 			<Divider text='ou' />
-			<BaseButton onClick={buttonClickHandler} text='Se connecter avec Google' classes='m-bg-dark m-color-light' />
+			<BaseButton onClick={buttonClickHandler} text='Se connecter avec Google' classes='bg-two color-three' />
 			<Divider text='' />
-			<div className={`${styles['sign-in__redirect']} m-flex`}>
+			<div className={`${styles['sign-in__redirect']} flex`}>
 				<p className={`m-standard-font`}>Vous n'avez pas de compte ? </p>
-				<BaseLink href='/auth/register' text='Créér un compte' classes='m-color-main m-standard-font-bold' />
+				<BaseLink href='/auth/register' text='Créér un compte' classes='color-one m-standard-font-bold' />
 			</div>
 		</div>
 	);

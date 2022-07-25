@@ -24,13 +24,13 @@ export default function Profile() {
 
 	return (
 		<>
-			<div className={`${styles['profile-header']} m-margin-ver-1`}>
+			<div className={`${styles['profile-header']} margin-ver-1`}>
 				<h1 className={`${styles['profile-header__email']} title-font color-main text-bold`}>Hello</h1>
-				<h1 className={`${styles['profile-header__email']} m-flex-column title-font color-main text-bold`}>
+				<h1 className={`${styles['profile-header__email']} flex-column title-font color-main text-bold`}>
 					{user?.email}
 				</h1>
 			</div>
-			<pre className=' m-margin-ver-1'>{JSON.stringify(user, null, 2)}</pre>
+			<pre className=' margin-ver-1'>{JSON.stringify(user, null, 2)}</pre>
 			<Logout />
 		</>
 	);

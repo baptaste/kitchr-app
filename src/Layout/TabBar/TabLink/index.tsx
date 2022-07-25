@@ -16,7 +16,7 @@ interface ITabLinkProps {
 export default function TabLink({ href, exact, pattern, src, text }: ITabLinkProps): JSX.Element {
 	const { pathname }: NextRouter = useRouter();
 	let isActive: boolean | null | undefined | RegExpMatchArray = false,
-		iconClasses: string = 'm-flex-column m-justify-evenly';
+		iconClasses: string = 'flex-column justify-evenly';
 
 	/* changing link text if current page is /register by checking pathname and pattern */
 	if (pattern) {
@@ -33,15 +33,15 @@ export default function TabLink({ href, exact, pattern, src, text }: ITabLinkPro
 	}
 
 	/* setting additional classes if link is active */
-	if (isActive) iconClasses += ' active-link m-filter-color-main';
+	if (isActive) iconClasses += ' active-link filter-color-one';
 
 	return (
 		<Link href={href} scroll>
-			<a className={`${styles['nav-link']} m-text-center`}>
+			<a className={`${styles['nav-link']} text-center`}>
 				<div className={`${styles['nav-link__icon']} ${iconClasses}`}>
 					<BaseIcon src={src} alt={text} />
 				</div>
-				<p className={`${styles['nav-link__text']} m-text-center m-tiny-font`}>{text}</p>
+				<p className={`${styles['nav-link__text']} text-center m-tiny-font`}>{text}</p>
 			</a>
 		</Link>
 	);

@@ -137,15 +137,15 @@ export default function Login() {
 					/>
 				)}
 
-				{authOption.type !== '' && <BaseButton type='submit' text={submitButtonText} classes='m-bg-main m-color-light' />}
+				{authOption.type !== '' && <BaseButton type='submit' text={submitButtonText} classes='bg-one color-three' />}
 
-				{error && <p className='m-margin-ver-1 color-error text-bold'>{error}</p>}
+				{error && <p className='margin-ver-1 color-five text-bold'>{error}</p>}
 
 				<Divider text='' />
 
 				<div className={`${styles['login__redirect']}`}>
 					<p className={`m-standard-font`}>Vous n'avez pas de compte ?</p>
-					<BaseLink href='/auth/register' text='Créér un compte' classes='m-color-main m-standard-font-bold' />
+					<BaseLink href='/auth/register' text='Créér un compte' classes='color-one m-standard-font-bold' />
 				</div>
 			</Form>
 		</div>

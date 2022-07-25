@@ -16,10 +16,10 @@ const Home: NextPage = ({ isLoading }: any) => {
 				{/* {user ? (
 					<p>
 						Welcome {user.name}!
-						<BaseLink href='/api/auth/logout' text='Déconnexion' classes='m-bg-main m-color-light' />
+						<BaseLink href='/api/auth/logout' text='Déconnexion' classes='bg-one color-three' />
 					</p>
 				) : (
-					<BaseLink href='/api/auth/login' text='Connexion' classes='m-bg-main m-color-light' />
+					<BaseLink href='/api/auth/login' text='Connexion' classes='bg-one color-three' />
 				)} */}
 			</div>
 			<div className='test'>
