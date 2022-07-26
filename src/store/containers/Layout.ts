@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Layout from '../../Layout';
+import Layout from '../../layout';
 import actions from '../actions/settings.actions';
 
 const mapStateToProps = (state: any) => ({

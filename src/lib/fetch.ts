@@ -16,7 +16,7 @@ export async function fetchAPI(path: string, opts: any, data?: any): Promise<any
 	try {
 		const res = await fetch(URL, options);
 		const resData = await res.json();
-		logAny('fetch, resData:', resData);
+		// logAny('fetch, resData:', resData);
 
 		// if (!Boolean(opts.returnData)) return;
 

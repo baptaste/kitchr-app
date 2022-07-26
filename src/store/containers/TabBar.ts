@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import TabBar from '../../Layout/TabBar';
+import TabBar from '../../layout/TabBar';
 
 const mapStateToProps = (state: any) => ({
 	loggedIn: state.auth.loggedIn,

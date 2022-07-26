@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import BaseIcon from '../../ui/icons/BaseIcon';
+import type { IBaseInputProps } from './BaseInput.d';
 import styles from './index.module.scss';
-import { IInputProps } from './Input';
 
-export default function Input(props: IInputProps): JSX.Element {
+export default function BaseInput(props: IBaseInputProps): JSX.Element {
 	function handleChange(e: any) {
 		props.onChange?.(e);
 	}

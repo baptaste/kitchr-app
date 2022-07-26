@@ -1,6 +1,6 @@
 import { ChangeEventHandler } from 'react';
 
-export declare interface IInputProps {
+export declare interface IBaseInputProps {
 	type: String<InputType>;
 	name: string;
 	labelText?: string;

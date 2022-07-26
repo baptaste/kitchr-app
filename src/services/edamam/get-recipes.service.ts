@@ -25,12 +25,13 @@ export async function getEdmamRecipes(): Promise<IEdamamAPIResponse | any> {
 	try {
 		const query = ['tomato', 'basil', 'feta'];
 		const requestUrl = getRequestUrl(query);
-		const response: IEdamamAPIResponse | any = await fetch(requestUrl, { method: 'GET' });
-		const data = await response.json();
-		if (response.status !== 200) {
-			throw `Error while fetching data from edamam recipe api. Data: ${data}`;
+		// const response: IEdamamAPIResponse | any = await fetch(requestUrl, { method: 'GET' });
+		const res: IEdamamAPIResponse | any = await fetchAPI('/recipes', { method: 'POST' }, { requestUrl });
+		// const data = await response.json();
+		if (res.status !== 200) {
+			throw `Error while fetching data from edamam recipe api. Res: ${res}`;
 		}
-		const recipes = data?.hits.map((key: any) => key.recipe);
+		const recipes = res?.data?.hits.map((key: any) => key.recipe);
 		logAny('edamam recipes:', recipes);
 		return recipes;
 	} catch (error) {

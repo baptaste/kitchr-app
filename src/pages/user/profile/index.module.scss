@@ -1,3 +1,5 @@
+@import 'src/styles/lib/main.scss';
+
 .profile-header {
 	width: 100%;
 
@@ -5,4 +7,8 @@
 		max-width: 100%;
 		word-break: break-all;
 	}
+}
+
+.profile-content {
+	width: 80%;
 }

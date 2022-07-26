@@ -9,6 +9,7 @@ export interface IProcessenv {
 	NEXT_PUBLIC_SUPABASE_URL: string;
 	NEXT_PUBLIC_SUPABASE_KEY: string;
 	SUPABASE_SIGNING_SECRET: string;
+	SUPABASE_SERVICE_ROLE_KEY: string;
 }
 
 declare global {

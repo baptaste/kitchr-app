@@ -6,3 +6,5 @@ export const EDAMAM_API = {
 	credentials: `&app_id=${process.env.EDAMAM_APP_ID}&app_key=${process.env.EDAMAM_APP_KEYS}`,
 	filter: '&health=vegetarian',
 };
+
+export const WELCOME_PAGE_ENDPOINT = `${KITCHR_CLIENT_ENTRYPOINT}/welcome?user_email=`;

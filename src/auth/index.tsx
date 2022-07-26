@@ -19,12 +19,7 @@ export default function Auth({ children, setStoreAuthSession, setStoreAuthUser, 
 	}
 
 	useEffect(() => {
-		// supabase.auth.onAuthStateChange((event, currentSession) => {
-		// 	logAny('onAuthStateChange event:', event);
-		// 	logAny('onAuthStateChange current currentSession:', currentSession);
-		// });
 		onAuthStateChange({ setSession, setUser });
-
 		return () => {
 			AuthCleanUp();
 		};

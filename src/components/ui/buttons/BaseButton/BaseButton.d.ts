@@ -1,6 +1,6 @@
 export declare interface IBaseButtonProps {
 	id?: string;
-	type: 'button' | 'reset' | 'submit';
+	type?: 'button' | 'reset' | 'submit';
 	name?: string;
 	text: string;
 	textClass?: string;

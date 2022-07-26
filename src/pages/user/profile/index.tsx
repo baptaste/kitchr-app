@@ -3,11 +3,12 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import BaseButton from '../../../components/ui/buttons/BaseButton';
 import { fetchAPI } from '../../../lib/fetch';
-import { logoutUser } from '../../../services/supabase/auth/logout.service';
+import { logoutUser } from '../../../services/supabase/client/auth/logout.service';
 import { logAny, logError } from '../../../utils/logs.utils';
 import { IAuthUser } from '../../../utils/supabase/auth/auth';
-import { supabase } from '../../../utils/supabase/supabase.utils';
+import { supabase } from '../../../utils/supabase/client/supabase.utils';
 import Logout from '../../auth/logout';
+import SignOut from '../../auth/sign-out';
 import styles from './index.module.scss';
 
 interface IProfileProps extends IAuthUser {}
@@ -29,9 +30,14 @@ export default function Profile() {
 				<h1 className={`${styles['profile-header__email']} flex-column title-font color-main text-bold`}>
 					{user?.email}
 				</h1>
+				<div className='flex align-center justify-around margin-ver-1' style={{ width: '55%' }}>
+					<p className='m-standard-font-bold color-two'>Status: </p>
+					<p className='m-standard-font-bold color-one'> {user?.role}</p>
+				</div>
 			</div>
-			<pre className=' margin-ver-1'>{JSON.stringify(user, null, 2)}</pre>
+			{/* <pre className={`${styles['profile-content']} margin-ver-1`}>{JSON.stringify(user, null, 2)}</pre> */}
 			<Logout />
+			<SignOut />
 		</>
 	);
 }

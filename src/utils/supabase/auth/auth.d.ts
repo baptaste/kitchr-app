@@ -1,10 +1,11 @@
-import { AuthUser, Provider } from '@supabase/supabase-js';
+import { AuthUser, Provider, SupabaseClient } from '@supabase/supabase-js';
 
 export declare interface IAuthUser {
 	auth_user: AuthUser;
 }
 
 export declare interface IOnAuthStateChangeProps {
+	supabase?: SupabaseClient;
 	setSession: React.Dispatch<React.SetStateAction<AuthSession | null>>;
 	setUser: React.Dispatch<React.SetStateAction<AuthUser | null>>;
 }

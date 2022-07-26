@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import BaseIcon from '../../ui/icons/BaseIcon';
+import BaseIcon from '../../icons/BaseIcon';
+
 import styles from './index.module.scss';
 import type { IPasswordInputProps } from './PasswordInput';
 

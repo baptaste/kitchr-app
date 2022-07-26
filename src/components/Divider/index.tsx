@@ -1,7 +1,8 @@
+import type { IDividerProps } from './Divider.d';
 import styles from './index.module.scss';
 
-export default function Divider({ text }: any): JSX.Element {
-	if (text == null || text == undefined || text === '') return <div className={`${styles.divider} bg-four`}></div>;
+export default function Divider({ text }: IDividerProps): JSX.Element {
+	if (!text) return <div className={`${styles.divider} bg-four`}></div>;
 
 	return (
 		<div className={`${styles['divider']} flex-center bg-four`}>

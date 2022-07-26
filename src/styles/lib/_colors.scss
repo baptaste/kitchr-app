@@ -57,3 +57,12 @@ $filter-color-one: invert(31%) sepia(62%) saturate(4205%) hue-rotate(131deg) bri
 .bg-five {
 	background: $color-crimson;
 }
+
+/*** none ***/
+.color-none {
+	color: none;
+}
+
+.bg-none {
+	background: none;
+}

@@ -8,7 +8,11 @@ export default function Welcome(): JSX.Element {
 	return (
 		<>
 			<PageHead title='Welcome' />
-			<p>Bienvenue ! Nous t'avons envoyé un mail à l'adresse "{query.user_email}" afin de valider ton inscription.</p>
+			<h2 className='m-standard-font-bold color-two'>
+				Bienvenue ! Nous t'avons envoyé un mail à l'adresse
+				<span className='m-standard-font-bold color-one'> {query.user_email} </span>
+				afin de {query.reset_pw ? 'reinitialiser ton mot de passe' : 'valider ton inscription.'}
+			</h2>
 		</>
 	);
 }

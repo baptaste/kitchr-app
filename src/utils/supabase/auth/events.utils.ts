@@ -1,8 +1,8 @@
-import { supabase } from '../supabase.utils';
 import { Subscription } from '@supabase/supabase-js';
 import { logAny, logError } from '../../logs.utils';
 import type { IOnAuthStateChangeProps } from './auth.d';
 import { fetchAPI } from '../../../lib/fetch';
+import { supabase } from '../client/supabase.utils';
 
 export function onAuthStateChange({ setSession, setUser }: IOnAuthStateChangeProps): Subscription | null {
 	const activeSession = supabase.auth.session();
